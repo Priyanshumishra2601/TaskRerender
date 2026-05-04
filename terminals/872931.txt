@@ -1,0 +1,38 @@
+---
+pid: 24224
+cwd: "C:\\Users\\Mayank\\.cursor\\projects\\C-Users-Mayank-AppData-Local-Temp-5649a7c0-824e-4137-ace6-422683c0c1f6\\server"
+command: "Set-Location \"C:\\Users\\Mayank\\.cursor\\projects\\C-Users-Mayank-AppData-Local-Temp-5649a7c0-824e-4137-ace6-422683c0c1f6\\client\"; npm install; npm run build"
+started_at: 2026-05-03T21:21:42.348Z
+running_for_ms: 85970    
+---
+
+added 134 packages, and audited 135 packages in 28s
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> dashboard-client@1.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 1579 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.75 kB │ gzip:  0.41 kB
+dist/assets/index-B0_Wx7wu.css   17.37 kB │ gzip:  3.99 kB
+dist/assets/index-DQEkPf5I.js   179.78 kB │ gzip: 56.30 kB
+✓ built in 40.74s
+
+---
+exit_code: 0
+elapsed_ms: 87730
+ended_at: 2026-05-03T21:23:10.078Z
+---

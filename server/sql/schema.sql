@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('Admin', 'Member') NOT NULL DEFAULT 'Member',
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS projects (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  techStack JSON,
+  status VARCHAR(50) NOT NULL DEFAULT 'active',
+  createdBy INT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (createdBy) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS project_members (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  projectId INT NOT NULL,
+  userId INT NOT NULL,
+  UNIQUE KEY uq_project_member (projectId, userId),
+  FOREIGN KEY (projectId) REFERENCES projects(id) ON DELETE CASCADE,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  projectId INT NOT NULL,
+  assignedTo INT NULL,
+  title VARCHAR(255) NOT NULL,
+  status ENUM('Pending', 'In Progress', 'Completed') NOT NULL DEFAULT 'Pending',
+  dueDate DATE NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  completedAt DATETIME NULL,
+  FOREIGN KEY (projectId) REFERENCES projects(id) ON DELETE CASCADE,
+  FOREIGN KEY (assignedTo) REFERENCES users(id) ON DELETE SET NULL
+);
