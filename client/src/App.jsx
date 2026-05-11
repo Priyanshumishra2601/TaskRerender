@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { api, getStoredUser, setSession, getToken } from "./api.js";
 
-const TECH_OPTIONS = ["React", "Node", "MySQL", "Java", "Python"];
+const TECH_OPTIONS = ["React", "Node", "MySQL", "Java", "Python", "AWS", "Docker", "Kubernetes", "HTML", "CSS","NEXTJS","TYPESCRIPT ", "POSTMAN"];
 
 function startOfToday() {
   const d = new Date();
