@@ -36,11 +36,17 @@ Database: Railway
 
 
 Live Demo
+
 Frontend
 https://task-rerender.vercel.app
+
 Backend API
 https://taskrerender.onrender.com
-Folder Structure
+
+
+## Folder Structure
+
+```bash
 task_management_system/
 │
 ├── client/
@@ -57,6 +63,8 @@ task_management_system/
 │   └── package.json
 │
 └── README.md
+
+
 Environment Variables
 Backend (.env)
 MYSQLHOST=
